@@ -1,0 +1,11 @@
+			$ta 		= new TAnnonces;
+			$select = $ta->select()->setIntegrityCheck(false);
+			$select->from('annonces', array('*'));
+			$select->join("type_bien_immo", "type_bien_immo.id_bien_immo = annonces.id_bien_immo");
+			$listA = $ta->fetchAll($select);
+			$l =array();
+			foreach($listA as $a):
+					$l[$a->id_annonce]				= $a->toArray();
+ 					$l[$a->id_annonce]['li'] 	= $a->findDependentRowset('TImagesBien')->toArray();				
+			endforeach;
+			return $l;

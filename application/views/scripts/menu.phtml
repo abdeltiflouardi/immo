@@ -1,0 +1,128 @@
+<div  class="menuButton">
+<?php
+	echo $this->button(
+	'accueilBtn',
+	'Accueil',
+		array(
+			'iconClass' 	=> 'myButtons', 
+			'style'			=> '',
+			'onclick'		=>'document.location="/"'
+		)
+	) . "\n";
+?>
+</div>
+<div  class="menuButton">
+<?php
+	echo $this->button(
+	'loginBtn',
+	'Mon compte',
+		array(
+			'iconClass' 	=> 'myButtons', 
+			'style'		=> '',
+			'onclick'=>'document.location="' . $this->url(array('action' => 'compte', 'controller'=>'client'), 'default',true) . '"'
+		)
+	) . "\n";
+?>
+</div>
+
+<div  class="menuButton">
+<?php
+	echo $this->button(
+	'abonnerBtn',
+	$this->translate('abonnerBtn'),
+		array(
+			'iconClass' 	=> 'myButtons', 
+			'style'		=> '',
+			'onclick'=>'document.location="' . $this->url(array('action' => 'abonner', 'controller'=>'client'), 'default',true) . '"'
+		)
+	) . "\n";
+?>
+</div>
+
+<div dojoType="dijit.Tooltip" connectId="abonnerBtn">
+<?php echo $this->translate("abonnerBtntt") . "\n"; ?>
+</div>
+
+<div  class="menuButton">
+<?php
+	echo $this->button(
+	'deposerBtn',
+	'Déposer une annonce',
+		array(
+			'iconClass' 	=> 'myButtons', 
+			'style'		=> '',
+			'onclick'=>'document.location="' . $this->url(array('action' => 'deposer', 'controller'=>'annonce'), 'default',true) . '"'
+		)
+	) . "\n";
+?>
+</div>
+<div dojoType="dijit.Tooltip" connectId="deposerBtn">
+<?php echo $this->translate("deposerBtntt") . "\n"; ?>
+</div>
+
+
+<div  class="menuButton">
+<?php
+	echo $this->button(
+	'offreAchatBtn',
+	'Les offres d\'achat',
+		array(
+			'iconClass' => 'myButtons', 
+			'onclick'=>'document.location="/recherche?offres_achat"'
+		)
+	) . "\n";
+?>
+</div>
+<div dojoType="dijit.Tooltip" connectId="offreAchatBtn">
+<?php echo $this->translate("offreAchatBtntt") . "\n"; ?>
+</div>
+
+<div  class="menuButton">
+<?php
+	echo $this->button(
+	'offreLocationBtn',
+	'Les offres de location',
+		array(
+			'iconClass' => 'myButtons', 
+			'onclick'=>'document.location="/recherche?offres_location"'
+		)
+	) . "\n";
+?>
+</div>
+<div dojoType="dijit.Tooltip" connectId="offreLocationBtn">
+<?php echo $this->translate("offreLocationBtntt") . "\n"; ?>
+</div>
+
+<div  class="menuButton">
+<?php
+	echo $this->button(
+	'contactBtn',
+	'Contactez-nous',
+		array(
+			'iconClass' => 'myButtons', 
+			'onclick'=>'document.location="' . $this->url(array('controller' => 'contact', 'action'=>''), 'default',true) . '"'
+		)
+	) . "\n";
+?>
+</div>
+
+<?php 
+	if( 	(isset($this->auth)) &&
+			($this->auth == true)): 
+?>
+<div  class="menuButton">
+<?php
+	echo $this->button(
+	'logoutBtn',
+	'Se déconnecter',
+		array(
+			'iconClass' 	=> 'myButtons', 
+			'style'		=> 'color: red;',
+			'onclick'=>'document.location="' . $this->url(array('action' => 'logout', 'controller'=>'client'), 'default',true) . '"'
+		)
+	) . "\n";
+?>
+</div>
+<?php endif; ?>
+
+<img src="/public/images/paypal_desc.png" title="" />

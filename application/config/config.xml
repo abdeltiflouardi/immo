@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<configdata>
+	<local>
+		<webhost>immo</webhost>
+		<database>
+			<adapter>pdo_mysql</adapter>
+			<params>
+				<host>localhost</host>
+				<username>root</username>
+				<password></password>
+				<dbname>immo</dbname>
+			</params>
+		</database>
+	</local>
+
+	<server>
+		<webhost>immo</webhost>
+		<database>
+			<adapter>pdo_mysql</adapter>
+			<params>
+				<host>localhost</host>
+				<username>tsimmo</username>
+				<password></password>
+				<dbname>tsimmo</dbname>
+			</params>
+		</database>
+	</server>
+</configdata>

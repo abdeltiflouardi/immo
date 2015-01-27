@@ -1,0 +1,148 @@
+<div  class="menuButton">
+<button 
+		name	=	"accueilBtn" 
+		id		=	"accueilBtn" 
+		type	=	"button" 
+		value	=	"Accueil" 
+		iconClass=	"myButtons"
+		dojoType=	"dijit.form.Button"
+		onclick	=	"document.location='/client/compte'"
+>
+	Accueil
+</button>
+</div>
+<div  class="menuButton">
+
+<button 
+		name	=	"loginBtn" 
+		id		=	"loginBtn" 
+		type	=	"button" 
+		value	=	"Mon compte" 
+		iconClass=	"myButtons"
+		dojoType=	"dijit.form.Button"
+		onclick	=	"document.location='/client/compte'"
+>
+	Mon compte
+</button>
+
+</div>
+
+<div  class="menuButton">
+<button 
+		name	=	"abonnerBtn" 
+		id		=	"abonnerBtn" 
+		type	=	"button" 
+		value	=	"<?php echo $this->translate('abonnerBtn'); ?>" 
+		iconClass=	"myButtons"
+		dojoType=	"dijit.form.Button"
+		onclick	=	"document.location='/client/abonner'"
+>
+	<?php echo $this->translate('abonnerBtn'); ?>
+</button>
+</div>
+
+<?php /*
+<div dojoType="dijit.Tooltip" connectId="abonnerBtn">
+<?php echo $this->translate("abonnerBtntt") . "\n"; ?>
+</div>
+*/
+?>
+
+<div  class="menuButton">
+<button 
+		name	=	"deposerBtn" 
+		id		=	"deposerBtn" 
+		type	=	"button" 
+		value	=	"Déposer une annonce" 
+		iconClass=	"myButtons"
+		dojoType=	"dijit.form.Button"
+		onclick	=	"document.location='/annonce/deposer'"
+>
+	Déposer une annonce
+</button>
+</div>
+
+<?php /*
+<div dojoType="dijit.Tooltip" connectId="deposerBtn">
+<?php echo $this->translate("deposerBtntt") . "\n"; ?>
+</div>
+*/
+?>
+
+<div  class="menuButton">
+<button 
+		name	=	"offreAchatBtn" 
+		id		=	"offreAchatBtn" 
+		type	=	"button" 
+		value	=	"Les offres d'achat" 
+		iconClass=	"myButtons"
+		dojoType=	"dijit.form.Button"
+		onclick	=	"document.location='/recherche?offres_achat'"
+>
+	Les offres d'achat
+</button>
+</div>
+
+<?php /*
+<div dojoType="dijit.Tooltip" connectId="offreAchatBtn">
+<?php echo $this->translate("offreAchatBtntt") . "\n"; ?>
+</div>
+*/
+?>
+
+<div  class="menuButton">
+<button 
+		name	=	"offreLocationBtn" 
+		id		=	"offreLocationBtn" 
+		type	=	"button" 
+		value	=	"Les offres de location" 
+		iconClass=	"myButtons"
+		dojoType=	"dijit.form.Button"
+		onclick	=	"document.location='/recherche?offres_location'"
+>
+	Les offres de location
+</button>
+</div>
+
+<?php /*
+<div dojoType="dijit.Tooltip" connectId="offreLocationBtn">
+<?php echo $this->translate("offreLocationBtntt") . "\n"; ?>
+</div>
+*/
+?>
+
+<div  class="menuButton">
+<button 
+		name	=	"contactBtn" 
+		id		=	"contactBtn" 
+		type	=	"button" 
+		value	=	"Contactez-nous" 
+		iconClass=	"myButtons"
+		dojoType=	"dijit.form.Button"
+		onclick	=	"document.location='/contact'"
+>
+	Contactez-nous
+</button>
+</div>
+
+<?php 
+	if( 	(isset($this->auth)) &&
+			($this->auth == true)): 
+?>
+<div  class="menuButton">
+<button 
+		name	=	"logoutBtn" 
+		id		=	"logoutBtn" 
+		type	=	"button" 
+		value	=	"Se déconnecter" 
+		iconClass=	"myButtons"
+		style 	=	"color: red;"
+		dojoType=	"dijit.form.Button"
+		onclick	=	"document.location='/client/logout'"
+>
+	Se déconnecter
+</button>
+</div>
+<?php endif; ?>
+
+<img src="/public/images/paypal_desc.png" title="" />

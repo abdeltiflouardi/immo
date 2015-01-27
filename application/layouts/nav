@@ -1,0 +1,52 @@
+<script type="text/javascript">
+window.onload = function(){
+	if(document.getElementById('zoneSearch')){
+			obj = document.getElementById('zoneSearch');
+			fils = obj.childNodes;
+			for(i=0; i<fils.length; i++)
+			{
+				if((fils[i].nodeType != 3)){
+					if( fils[i].getElementsByTagName("img").length>1 )
+					{
+						fils[i].innerHTML += '<span>';
+						fils[i].innerHTML += '<a href="javascript:void(0);" onclick="nav(this, 0);" style="font-size: small;">Image précédente</a> ';
+						fils[i].innerHTML += '<a href="javascript:void(0);" onclick="nav(this, 1);" style="font-size: small;">image suivante </a>';
+						fils[i].innerHTML += '</span>';
+					}
+				}
+			}
+		}
+	}
+
+function nav(obj, v)
+{
+	imgs = obj.parentNode.getElementsByTagName("img");
+	
+	switch (v){
+		case 0:
+			for(i=1; i < imgs.length ; i++)
+			{
+				if( (imgs[i].style.display != "none")){
+					imgs[i].style.display = "none";
+					i--;
+					imgs[i].style.display = "";
+					break;
+				}
+			}
+		break;
+		case 1:
+			for(i=0; i < imgs.length-1 ; i++)
+			{
+				if( (imgs[i].style.display != "none")){
+					imgs[i].style.display = "none";
+					i++;
+					imgs[i].style.display = "";
+					break;
+				}
+			}
+		break;	
+	}
+	
+
+}
+</script>
